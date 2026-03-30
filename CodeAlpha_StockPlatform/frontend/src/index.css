@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:    #0a0d14;
+  --bg2:   #111520;
+  --bg3:   #161b28;
+  --bg4:   #1c2235;
+  --green: #00c896;
+  --red:   #ff4d6a;
+  --blue:  #4d9fff;
+  --text:  #e8eaf0;
+  --text2: #8b91a8;
+  --text3: #5a6080;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ffffff20; border-radius: 2px; }
+
+/* Utilities */
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.text-green { color: var(--green) !important; }
+.text-red   { color: var(--red)   !important; }
+.text-blue  { color: var(--blue)  !important; }
+.text-muted { color: var(--text2) !important; }
+
+/* Card */
+.card {
+  background: var(--bg2);
+  border: 1px solid #ffffff12;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/* Badge */
+.badge-up   { background: #00c89614; color: var(--green); border: 1px solid #00c89640; }
+.badge-down { background: #ff4d6a14; color: var(--red);   border: 1px solid #ff4d6a40; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.live-dot { animation: pulse-dot 1.5s infinite; }
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-in { animation: slide-in 0.25s ease; }
